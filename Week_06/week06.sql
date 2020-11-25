@@ -1,0 +1,74 @@
+ CREATE TABLE BASE_GOODS_INFO
+            (
+                    ID BIGINT AUTO_INCREMENT COMMENT '主键' PRIMARY KEY,
+                    GOODSCREATETIME TIMESTAMP NULL COMMENT '创建时间',
+                    GOODSCREATORID BIGINT NULL COMMENT '创建用户ID',
+                    GOODSCODE VARCHAR(16) NULL COMMENT '商品编码',
+    GOODSPRICE DECIMAL NULL COMMENT '商品单价'
+            )
+    COMMENT '商品信息表';
+
+
+
+
+
+    CREATE TABLE BASE_ORDER_INFO
+            (
+                    ID BIGINT AUTO_INCREMENT
+                    PRIMARY KEY,
+                    GOODSCREATETIME TIMESTAMP NULL COMMENT '创建时间',
+                    GOODSCREATORID BIGINT NULL COMMENT '创建用户ID',
+                    COUNTRYID BIGINT NULL COMMENT '下单地址——国家',
+                    PROVINCEID BIGINT NULL COMMENT '下单地址--省',
+                    CITYID BIGINT NULL COMMENT '下单地址--城市',
+                    DISTRICTID BIGINT NULL COMMENT '下单地址--区',
+                    STREETID BIGINT NULL COMMENT '下单地址--街道',
+                    ADDRESSDETAIL VARCHAR(128) NULL COMMENT '详细收获地址',
+    ORDERAMOUNT DECIMAL NULL COMMENT '订单金额',
+    REMARKS VARCHAR(256) NULL COMMENT '订单备注',
+    ORDERCODE VARCHAR(64) NULL COMMENT '订单编码',
+    ORDERSTATUS VARCHAR(64) NULL COMMENT '订单状态'
+            )
+    COMMENT '订单信息表';
+
+
+
+
+
+    CREATE TABLE BASE_STORE_INFO
+            (
+                    ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+                    CREATORTIME TIMESTAMP NULL COMMENT '创建时间',
+                    CREATORID BIGINT NULL COMMENT '创建用户ID',
+                    GOODSMODIFIEDTIME TIMESTAMP NULL COMMENT '最近一次的修改时间',
+                    GOODSMODIFIERID BIGINT NULL COMMENT '修改的人的 ID',
+                    USERID BIGINT NULL COMMENT 'STORE 关联的用户 ID',
+                    STORENAME VARCHAR(64) NULL COMMENT '店铺名称',
+    CONTACTNAME VARCHAR(64) NULL COMMENT '联系人姓名',
+    CONTACTNOBILE VARCHAR(11) NULL COMMENT '联系人手机号',
+    STOREPROVINCEID BIGINT NULL COMMENT '店铺所在省份 ID',
+    STORECITYID BIGINT NULL COMMENT '店铺所在城市 ID',
+    STOREDISTRICTID BIGINT NULL COMMENT '店铺所在区 ID',
+    STORESTREETID BIGINT NULL COMMENT '店铺所在街道 ID',
+    STOREADDRESS VARCHAR(125) NULL COMMENT '店铺详细地址',
+    BUSINESSTIME VARCHAR(64) NULL COMMENT '营业时间'
+            )
+    COMMENT '店铺信息表';
+
+
+
+
+
+    CREATE TABLE BASE_USER_INFO
+            (
+                    ID BIGINT NULL COMMENT 'ID ',
+                    GOODSCREATETIME TIMESTAMP NULL COMMENT '创建时间',
+                    GOODSCREATORID BIGINT NULL COMMENT '创建用户ID',
+                    GOODSMODIFIEDTIME TIMESTAMP NULL COMMENT '最近一次的修改时间',
+                    GOODSMODIFIERID BIGINT NULL COMMENT '修改的人的ID',
+                    USERNAME VARCHAR(32) NOT NULL COMMENT '用户名',
+    PASSWORD VARCHAR(125) NOT NULL,
+    EMAIL VARCHAR(255) NULL COMMENT 'EMAIL',
+    PHONE VARCHAR(11) NOT NULL COMMENT '手机号码'
+            )
+    COMMENT '用户信息表';
