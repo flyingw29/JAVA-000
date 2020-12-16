@@ -1,5 +1,3 @@
-package zhazha;
-
 import java.util.concurrent.CompletableFuture;
 
 /**

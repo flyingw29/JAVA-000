@@ -1,5 +1,3 @@
-package zhazha;
-
 /**
  * @author WANGFEI
  */
